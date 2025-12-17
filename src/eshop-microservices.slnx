@@ -1,1 +1,9 @@
-<Solution />
+<Solution>
+  <Folder Name="/BuildingBlocks/">
+    <Project Path="C:\Users\HP\source\repos\EshopMicroservices\src\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj" Id="2a728f72-196c-4987-a12e-519e47a86a0c" />
+  </Folder>
+  <Folder Name="/Services/" />
+  <Folder Name="/Services/Catalog/">
+    <Project Path="C:\Users\HP\source\repos\EshopMicroservices\src\Services\Catalog\Catalog.API\Catalog.API.csproj" Id="2e9bb5fd-666d-44ee-bd21-e925ac698f4f" />
+  </Folder>
+</Solution>

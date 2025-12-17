@@ -1,0 +1,16 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+
+@host = https://localhost:5050
+
+
+### Create a product
+POST {{host}}/products
+Content-Type: application/json
+
+{
+  "Name": "John Doe",
+  "Category": ["c1", "c2"],
+  "Description": "Description Product 1",
+  "ImageFile": "ImageFile Product 1",
+  "Price": 199
+}
