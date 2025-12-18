@@ -1,4 +1,4 @@
-﻿using Carter;
+﻿
 
 namespace Catalog.API.Products.GetProducts;
 

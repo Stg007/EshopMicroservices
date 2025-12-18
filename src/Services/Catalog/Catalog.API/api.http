@@ -2,19 +2,39 @@
 
 @host = https://localhost:5050
 
+#Localhost configuration
+
+@lh_catalog_url = https://localhost:5050
+@lh_basket_url = https://localhost:5051
+@lh_ordering_url = https://localhost:5053
+
+#Docker Configuration
+
+@d_catalog_url = https://localhost:6060
+@d_basket_url = https://localhost:6061
+@d_ordering_url = https://localhost:6063
+
+
 
 ### Create a product
-POST {{host}}/products
+
+POST {{lh_catalog_url}}/products
 Content-Type: application/json
 
 {
-  "Name": "Taha El maliani Doe",
-  "Category": ["c1", "c2"],
-  "Description": "Description Product 1",
-  "ImageFile": "ImageFile Product 1",
-  "Price": 199
+  "Name": "Taha El maliani 3",
+  "Category": ["c1", "c3"],
+  "Description": "Description Product 3",
+  "ImageFile": "ImageFile Product 3",
+  "Price": 1990
 }
 
 ### get all products
-GET {{host}}/products
+
+GET {{lh_catalog_url}}/products
+Content-Type: application/json
+
+### get product by Id
+
+GET {{lh_catalog_url}}/product/019b31ee-0ba7-4520-84a6-25f49ed2d670
 Content-Type: application/json
