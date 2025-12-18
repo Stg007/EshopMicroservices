@@ -6,4 +6,7 @@
   <Folder Name="/Services/Catalog/">
     <Project Path="C:\Users\HP\source\repos\EshopMicroservices\src\Services\Catalog\Catalog.API\Catalog.API.csproj" Id="2e9bb5fd-666d-44ee-bd21-e925ac698f4f" />
   </Folder>
+  <Project Path="docker-compose.dcproj">
+    <Build />
+  </Project>
 </Solution>

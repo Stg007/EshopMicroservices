@@ -13,7 +13,7 @@ builder.Services.AddMarten(ops =>
 {
     ops.Connection(builder.Configuration.GetConnectionString("Database")!);
     // Register your document mappings here
-    //ops.Schema.For<Catalog.API.Models.Product>();
+    ops.Schema.For<Catalog.API.Models.Product>();
 
 }).UseLightweightSessions();
 

@@ -1,0 +1,12 @@
+services:
+  catalogdb:
+    container_name: catalogdb
+    ports:
+      - "5433:5432"
+    restart: always
+    volumes:
+      - postgres_catalog:/var/lib/postgresql/18/docker
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: CatalogDb

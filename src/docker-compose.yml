@@ -1,0 +1,11 @@
+services:
+  catalogdb:
+    image: postgres
+    environment:
+      POSTGRES_DB: catalogdb
+    volumes:
+      - catalogdb_data:/var/lib/postgresql/18/docker
+
+volumes:
+  postgres_catalog:
+  catalogdb_data:

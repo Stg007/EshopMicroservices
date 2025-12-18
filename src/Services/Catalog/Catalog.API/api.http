@@ -8,9 +8,13 @@ POST {{host}}/products
 Content-Type: application/json
 
 {
-  "Name": "John Doe",
+  "Name": "Taha El maliani Doe",
   "Category": ["c1", "c2"],
   "Description": "Description Product 1",
   "ImageFile": "ImageFile Product 1",
   "Price": 199
 }
+
+### get all products
+GET {{host}}/products
+Content-Type: application/json
