@@ -38,3 +38,27 @@ Content-Type: application/json
 
 GET {{lh_catalog_url}}/products/019b454b-645e-4574-a5b1-ff45143d18df
 Content-Type: application/json
+
+### Get Product by category
+
+GET {{lh_catalog_url}}/products/category/c1
+Content-Type: application/json
+
+### Update product by id
+
+PUT {{lh_catalog_url}}/products
+Content-Type: application/json
+
+{
+  "Id": "019b454b-645e-4574-a5b1-ff45143d18df",
+  "Name": "Taha El maliani 20",
+  "Category": ["c1", "c4"],
+  "Description": "Description Product 20",
+  "ImageFile": "ImageFile Product 20",
+  "Price": 1991
+}
+
+### Delete product by id
+
+DELETE {{lh_catalog_url}}/products/019b454b-645e-4574-a5b1-ff45143d18df
+Content-Type: application/json
