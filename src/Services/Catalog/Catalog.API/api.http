@@ -22,10 +22,10 @@ POST {{lh_catalog_url}}/products
 Content-Type: application/json
 
 {
-  "Name": "Taha El maliani 3",
+  "Name": "Taha El maliani 2",
   "Category": ["c1", "c3"],
-  "Description": "Description Product 3",
-  "ImageFile": "ImageFile Product 3",
+  "Description": "Description Product 2",
+  "ImageFile": "ImageFile Product 2",
   "Price": 1990
 }
 
@@ -36,5 +36,5 @@ Content-Type: application/json
 
 ### get product by Id
 
-GET {{lh_catalog_url}}/product/019b31ee-0ba7-4520-84a6-25f49ed2d670
+GET {{lh_catalog_url}}/products/019b454b-645e-4574-a5b1-ff45143d18df
 Content-Type: application/json
