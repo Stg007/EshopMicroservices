@@ -1,5 +1,6 @@
 ﻿
 using Catalog.API.Exceptions;
+using Catalog.API.Products.CreateProduct;
 
 namespace Catalog.API.Products.UpdateProduct;
 
@@ -15,6 +16,17 @@ public record UpdateProductCommand
 
 public record UpdateProductResult(Guid Id);
 
+public class UpdateProductCommandValidator : AbstractValidator<UpdateProductCommand>
+{
+    public UpdateProductCommandValidator()
+    {
+        RuleFor(x => x.Name).NotEmpty().MaximumLength(200).WithMessage("Name required");
+        RuleFor(x => x.Category).NotEmpty().WithMessage("Category required");
+        RuleFor(x => x.Description).NotEmpty().MaximumLength(1000).WithMessage("Description required");
+        RuleFor(x => x.ImageFile).NotEmpty().MaximumLength(500).WithMessage("ImageFile required");
+        RuleFor(x => x.Price).NotEmpty().WithMessage("Price required").GreaterThan(0).WithMessage("must be greater than zero");
+    }
+}
 internal class UpdateProductHandler(IDocumentSession session) 
     : ICommandHandler<UpdateProductCommand, UpdateProductResult>
 {

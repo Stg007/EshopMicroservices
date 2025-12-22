@@ -22,11 +22,11 @@ POST {{lh_catalog_url}}/products
 Content-Type: application/json
 
 {
-  "Name": "Taha El maliani 2",
-  "Category": ["c1", "c3"],
-  "Description": "Description Product 2",
-  "ImageFile": "ImageFile Product 2",
-  "Price": 1990
+  "Name": "Taha El maliani 12",
+  "Category": ["c1", "c13"],
+  "Description": "Description Product 12",
+  "ImageFile": "ImageFile Product 12",
+  "Price": 20
 }
 
 ### get all products
@@ -55,7 +55,7 @@ Content-Type: application/json
   "Category": ["c1", "c4"],
   "Description": "Description Product 20",
   "ImageFile": "ImageFile Product 20",
-  "Price": 1991
+  "Price":  -1991
 }
 
 ### Delete product by id
