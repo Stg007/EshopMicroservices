@@ -34,7 +34,7 @@ internal class UpdateProductHandler(IDocumentSession session)
     {
         var productToUpdate = await session.Query<Product>()
             .Where(p => p.Id == command.Id)
-            .SingleOrDefaultAsync(cancellationToken) ?? throw new ProductNotFoundException();
+            .SingleOrDefaultAsync(cancellationToken) ?? throw new ProductNotFoundException(command.Id);
 
         productToUpdate.Name = command.Name;
         productToUpdate.Description = command.Description;
