@@ -31,8 +31,13 @@ Content-Type: application/json
 
 ### get all products
 
-GET {{lh_catalog_url}}/products
+GET {{d_catalog_url}}/products?PageNumber=1&PageSize=10
 Content-Type: application/json
+
+### Health
+
+GET {{lh_catalog_url}}/health
+
 
 ### get product by Id
 

@@ -6,6 +6,13 @@ services:
     volumes:
       - catalogdb_data:/var/lib/postgresql/18/docker
 
+  catalog.api:
+    image: ${DOCKER_REGISTRY-}catalogapi
+    build:
+      context: .
+      dockerfile: Services/Catalog/Catalog.API/Dockerfile
+
 volumes:
   postgres_catalog:
   catalogdb_data:
+
