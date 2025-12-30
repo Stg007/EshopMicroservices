@@ -1,10 +1,9 @@
 services:
   catalogdb:
     image: postgres
-    environment:
-      POSTGRES_DB: catalogdb
-    volumes:
-      - catalogdb_data:/var/lib/postgresql/18/docker
+
+  basketdb:
+    image: postgres
 
   catalog.api:
     image: ${DOCKER_REGISTRY-}catalogapi
@@ -13,6 +12,6 @@ services:
       dockerfile: Services/Catalog/Catalog.API/Dockerfile
 
 volumes:
-  postgres_catalog:
   catalogdb_data:
+  basketdb_data:
 

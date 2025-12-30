@@ -67,3 +67,36 @@ Content-Type: application/json
 
 DELETE {{lh_catalog_url}}/products/019b454b-645e-4574-a5b1-ff45143d18df
 Content-Type: application/json
+
+
+### add basket
+
+GET {{lh_basket_url}}/basket/taha
+Content-Type: application/json
+
+### Add Item
+
+POST {{lh_basket_url}}/basket
+Content-Type: application/json
+
+{
+  "Cart": {
+    "UserName": "Toto",
+    "Items": [
+      {
+        "Quantity": 2,
+        "Color": "Red"
+        "Price": 500,
+        "ProductId": "6B29FC40-CA47-1067-B31D-00DD010662DA",
+        "ProductName": "Toto"
+      },
+      {
+        "Quantity": 3,
+        "Color": "Yellow",
+        "Price": 110
+        "ProductId": "6B29FC40-CA47-1067-B31D-00DD010662DA",
+        "ProductName": "Toto P2"
+      }
+    ]
+  }
+}
