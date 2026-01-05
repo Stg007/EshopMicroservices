@@ -85,7 +85,7 @@ Content-Type: application/json
     "Items": [
       {
         "Quantity": 2,
-        "Color": "Red"
+        "Color": "Red",
         "Price": 500,
         "ProductId": "6B29FC40-CA47-1067-B31D-00DD010662DA",
         "ProductName": "Toto"
@@ -93,10 +93,19 @@ Content-Type: application/json
       {
         "Quantity": 3,
         "Color": "Yellow",
-        "Price": 110
+        "Price": 110,
         "ProductId": "6B29FC40-CA47-1067-B31D-00DD010662DA",
         "ProductName": "Toto P2"
       }
     ]
   }
 }
+
+
+### Get basket Toto
+GET {{lh_basket_url}}/basket/Toto
+
+
+### Delete a basket
+
+DELETE {{lh_basket_url}}/basket/Toto
