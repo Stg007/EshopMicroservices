@@ -109,3 +109,7 @@ GET {{lh_basket_url}}/basket/Toto
 ### Delete a basket
 
 DELETE {{lh_basket_url}}/basket/Toto
+
+
+
+
