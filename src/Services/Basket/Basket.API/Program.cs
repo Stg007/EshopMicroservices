@@ -1,6 +1,7 @@
 
 
 using BuildingBlocks.Exceptions.Handler;
+using Discount.Grpc;
 using HealthChecks.UI.Client;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -39,6 +40,12 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 
 app.MapCarter();
+
+builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(options =>
+{
+    options.Address = new Uri(builder.Configuration["GrpcSettings:DiscountUrl"]!);
+});
+
 app.UseExceptionHandler(options => { });
 
 app.UseHealthChecks("/health", 

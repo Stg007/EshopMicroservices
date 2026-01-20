@@ -1,6 +1,7 @@
 ﻿
 
 using Basket.API.Data;
+using Discount.Grpc;
 
 namespace Basket.API.Basket.StoreBasket;
 public record StoreBasketCommand(ShoppingCart Cart) : ICommand<StoreBasketResult>;
@@ -16,15 +17,22 @@ public class StoreBasketCommandValidator : AbstractValidator<StoreBasketCommand>
     }
 }
 
-public class StoreBasketCommandHandler (IBasketRepository _repo)
+public class StoreBasketCommandHandler (IBasketRepository _repo, DiscountProtoService.DiscountProtoServiceClient discount)
     : ICommandHandler<StoreBasketCommand, StoreBasketResult>
 {
     public async Task<StoreBasketResult> Handle(StoreBasketCommand command, CancellationToken cancellationToken)
     {
-        ShoppingCart cart = command.Cart;
+        // TODO: communicate with Discount.Grpc and calculate the latest prices
+
+        foreach (var item in command.Cart.Items)
+        {
+            var coupon = await discount.GetDiscountAsync(new GetDiscountRequest() { ProductName = item.ProductName }, cancellationToken: cancellationToken);
+            item.Price -= (decimal)coupon.Amount;
+        }
+
         // Here you would typically store the shopping cart in a database or cache
 
-        var basket = await _repo.StoreBasketAsync(cart);
+        var basket = await _repo.StoreBasketAsync(command.Cart);
 
         return new StoreBasketResult(basket.UserName);
     }
