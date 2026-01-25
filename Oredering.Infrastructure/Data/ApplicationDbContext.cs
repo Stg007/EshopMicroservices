@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Ordering.Domain.Models;
+using Oredering.Application.Data;
 using System.Reflection;
 
 namespace Oredering.Infrastructure.Data;
 
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : DbContext, IApplicationDbContext
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         :base(options)
