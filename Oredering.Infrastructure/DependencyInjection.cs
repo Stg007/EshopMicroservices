@@ -1,4 +1,7 @@
-﻿namespace Oredering.Infrastructure;
+﻿using Microsoft.EntityFrameworkCore.Diagnostics;
+using Oredering.Infrastructure.Data.Interceptors;
+
+namespace Oredering.Infrastructure;
 
 public static class DependencyInjection
 {
@@ -8,9 +11,14 @@ public static class DependencyInjection
         // Register infrastructure services here
 
         var connectionString = configuration.GetConnectionString("Database");
+        services.AddScoped<ISaveChangesInterceptor, AuditableEntityInterceptor>();
+        services.AddScoped<ISaveChangesInterceptor, DispatchDomainEventInterceptor>();
 
-        services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(connectionString));
+        services.AddDbContext<ApplicationDbContext>((sp,options) =>
+        {
+            options.UseSqlServer(connectionString);
+            options.AddInterceptors(sp.GetServices<ISaveChangesInterceptor>());
+        });
 
         //services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
 
