@@ -6,4 +6,9 @@ global using Oredering.Application.Dtos;
 global using FluentValidation;
 global using Microsoft.EntityFrameworkCore;
 global using Ordering.Domain.Models;
-
+global using MediatR;
+global using Microsoft.Extensions.Logging;
+global using Ordering.Domain.Events;
+global using Ordering.Domain.ValueObjects;
+global using Oredering.Application.Data;
+global using Oredering.Application.Extensions;

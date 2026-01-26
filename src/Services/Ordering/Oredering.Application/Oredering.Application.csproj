@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Orders\EventHandlers\" />
-    <Folder Include="Orders\Queries\" />
+    <Folder Include="Orders\EventHandlers\Domain\" />
+    <Folder Include="Orders\EventHandlers\Integration\" />
   </ItemGroup>
 
   <ItemGroup>
